@@ -1,0 +1,3310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.TwoPlayerFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/information"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/info_button"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/wonDialog"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/dialog_background"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/dialog_background"
+                android:contentDescription="@string/gameLayout"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/main_background2" />
+
+            <LinearLayout
+                android:id="@+id/trophyLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.100000024">
+
+                <ImageView
+                    android:id="@+id/winnerView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/dialog_background"
+                    android:contentDescription="@string/this_is_used_to_show_winner_view"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.707"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.165"
+                    app:srcCompat="@drawable/player_1" />
+
+
+                <ImageView
+                    android:id="@+id/trophyView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:contentDescription="@string/this_is_used_to_show_winner_view"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.707"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.165"
+                    app:srcCompat="@drawable/winner" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/resultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="@string/congratulations"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/trophyLayout"
+                app:layout_constraintStart_toStartOf="@+id/trophyLayout"
+                app:layout_constraintTop_toBottomOf="@+id/trophyLayout"
+                app:layout_constraintVertical_bias="0.115" />
+
+            <TextView
+                android:id="@+id/namePlate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="@string/circle_player_won"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/trophyLayout"
+                app:layout_constraintStart_toStartOf="@+id/trophyLayout"
+                app:layout_constraintTop_toBottomOf="@+id/trophyLayout"
+                app:layout_constraintVertical_bias="0.416" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/playAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:padding="15dp"
+                android:text="@string/play_again"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/trophyLayout"
+                app:layout_constraintStart_toStartOf="@+id/trophyLayout"
+                app:layout_constraintTop_toBottomOf="@+id/trophyLayout"
+                app:layout_constraintVertical_bias="0.869" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/gameBoard"
+            app:layout_constraintEnd_toEndOf="@+id/marks"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/marks"
+            app:layout_constraintTop_toBottomOf="@+id/marks">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Turn"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text=":"
+                android:textColor="#000000"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:id="@+id/turnView"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:src="@drawable/player_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/marks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            app:layout_constraintBottom_toTopOf="@+id/gameBoard"
+            app:layout_constraintEnd_toEndOf="@+id/gameBoard"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/gameBoard"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.100000024">
+
+            <ImageView
+                android:id="@+id/pL1"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/player_background"
+                android:src="@drawable/player_1" />
+
+            <TextView
+                android:id="@+id/player1_score"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="100"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/view"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="VS"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold|italic" />
+
+            <ImageView
+                android:id="@+id/pL2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/player_background"
+                android:src="@drawable/player_2" />
+
+
+            <TextView
+                android:id="@+id/player2_score"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="100"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/gameBoard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.65">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic11View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic12"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic12View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic13"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic13View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic14"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic14View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic15"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic15View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic16"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic16View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic17"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic17View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic18"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic18View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic19"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic19View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic21View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic22"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic22View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic23"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic23View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic24"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic24View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic25"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic25View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic26"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic26View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic27"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic27View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic28"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic28View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic29"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic29View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic31View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic32"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic32View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic33"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic33View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic34"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic34View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic35"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic35View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic36"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic36View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic37"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic37View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic38"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic38View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic39"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic39View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic41View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic42"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic42View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic43"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic43View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic44"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic44View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic45"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic45View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic46"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic46View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic47"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic47View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic48"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic48View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic49"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic49View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic51View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic52"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic52View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic53"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic53View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic54"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic54View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic55"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic55View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic56"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic56View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic57"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic57View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic58"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic58View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic59"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic59View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic61View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic62"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic62View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic63"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic63View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic64"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic64View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic65"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic65View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic66"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic66View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic67"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic67View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic68"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic68View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic69"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic69View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic71"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic71View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic72"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic72View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic73"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic73View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic74"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic74View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic75"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic75View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic76"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic76View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic77"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic77View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic78"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic78View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic79"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic79View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic81View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic82"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic82View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic83"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic83View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic84"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic84View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic85"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic85View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic86"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic86View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic87"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic87View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic88"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic88View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic89"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic89View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic91"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic91View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic92"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic92View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic93"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic93View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic94"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic94View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic95"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic95View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic96"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic96View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic97"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic97View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic98"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic98View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic99"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic99View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic101"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic101View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic102"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic102View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic103"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic103View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic104"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic104View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic105"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic105View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic106"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic106View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic107"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic107View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic108"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic108View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic109"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic109View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic111"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic111View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic112"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic112View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic113"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic113View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic114"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic114View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic115"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic115View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic116"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic116View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic117"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic117View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic118"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic118View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic119"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic119View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic121"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic121View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic122"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic122View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic123"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic123View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+                <LinearLayout
+
+                    android:id="@+id/tic124"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic124View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic125"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic125View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic126"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic126View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic127"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic127View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic128"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic128View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+                <LinearLayout
+
+                    android:id="@+id/tic129"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/tic129View"
+
+                        android:layout_width="0dp"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/box"
+                        android:src="@drawable/player_1"
+                        tools:ignore="NestedWeights" />
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/black" />
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:background="@color/black" />
+
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/soundSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="Sounds"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/restartBtn"
+            app:layout_constraintEnd_toStartOf="@+id/restartBtn"
+            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintStart_toStartOf="@+id/gameBoard"
+            app:layout_constraintTop_toTopOf="@+id/restartBtn" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/restartBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/restart"
+            android:textColor="#FFFFFF"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/gameBoard"
+            app:layout_constraintHorizontal_bias="0.924"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gameBoard"
+            app:layout_constraintVertical_bias="0.9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

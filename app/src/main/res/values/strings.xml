@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TicTacToe 2</string>
+    <string name="tic_tac_toe_2">Tic Tac Toe 2</string>
+    <string name="matrix">\@matrix</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="box">box</string>
+    <string name="restart">restart</string>
+    <string name="play_again">Play again</string>
+    <string name="circle_player_won">Circle player won...!</string>
+    <string name="congratulations">Congratulations...!</string>
+    <string name="this_is_used_to_show_winner_view">This is used to show winner view</string>
+    <string name="gameLayout">this is game layout</string>
+    <string name="dots">■ ■ ■</string>
+</resources>
